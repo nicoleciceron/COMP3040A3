@@ -9,8 +9,6 @@ This endpoint returns information about all the busses, like their bus number, t
 
 ## Sample Request with Sample response
 
-## Sample Request with Sample response
-
 1) This is a sample request for ticketFair
 
 https://api.wpg-transit.org/ticketFair/json?age=76
@@ -31,14 +29,35 @@ Sample Response:
 https://api.wpg-transit.org/peggoPass/
 
 Sample Response:
+```
+"result" : [
+    {
+        "id" : "1",
+        "type" : "Reduced Fare",
+        "colour" : "Green",
+        "passenger_type" : [
+            "Seniors",
+            "Youth",
+            "Student"
+        ]
+    },
+    {
+        "id" : "2",
+        "type" : "Full Fare",
+        "colour" : "White",
+        "passenger_type" : [
+            "Full-fare"
+        ]
+    }
+],
+"status" : "success"
+```
 
 3) Sample request request and response to getAllBusRoutes()
 
 https://api.wpg-transit.org/getAllBusRoutes/
 
 Sample Response:
-
-
 ```
 "results" : [
     {
@@ -65,14 +84,14 @@ Sample Response:
     {
         "id" : "4"
         "busNumber" : "78",
-        "routeName" : "Pembina"
+        "routeName" : ""
         "startLocation" : "", 
         "endLocation" : ""
     },
     {
         "id" : "5"
         "busNumber" : "160",
-        "routeName" : "Pembina"
+        "routeName" : ""
         "startLocation" : "", 
         "endLocation" : ""
     }
