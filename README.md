@@ -63,37 +63,37 @@ Sample Response:
     {
         "id" : "1"
         "busNumber" : "74",
-        "routeName" : ""
-        "startLocation" : "", 
-        "endLocation" : ""
+        "routeName" : "Kenaston"
+        "startLocation" : "Polo Park", 
+        "endLocation" : "University of Manitoba"
     },
     {
         "id" : "2"
         "busNumber" : "75",
-        "routeName" : ""
-        "startLocation" : "", 
-        "endLocation" : ""
+        "routeName" : "Crosstown East"
+        "startLocation" : "Kildonan Place", 
+        "endLocation" : "university of Manitoba"
     },
     {
         "id" : "3"
-        "busNumber" : "76",
-        "routeName" : ""
-        "startLocation" : "", 
-        "endLocation" : ""
+        "busNumber" : "77",
+        "routeName" : "Crosstown North"
+        "startLocation" : "Polo Park", 
+        "endLocation" : "Kildonan Place"
     },
     {
         "id" : "4"
         "busNumber" : "78",
-        "routeName" : ""
-        "startLocation" : "", 
-        "endLocation" : ""
+        "routeName" : "Waverly"
+        "startLocation" : "Polo Park", 
+        "endLocation" : "Universty of Manitoba"
     },
     {
         "id" : "5"
-        "busNumber" : "160",
-        "routeName" : ""
-        "startLocation" : "", 
-        "endLocation" : ""
+        "busNumber" : "79",
+        "routeName" : "Charleswood"
+        "startLocation" : "Polo Park", 
+        "endLocation" : "Westdale"
     }
 ],
 "status" : "success"
