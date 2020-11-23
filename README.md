@@ -16,7 +16,7 @@ This endpoint returns information about all the busses, like their bus number, t
 https://api.wpg-transit.org/ticketFair/json?age=76
 
 Sample Response: 
-```json
+```
 "result" : {
     "id" : "1",
     "type" : "Senior Fare",
@@ -39,7 +39,7 @@ https://api.wpg-transit.org/getAllBusRoutes/
 Sample Response:
 
 
-```json
+```
 "results" : [
     {
         "id" : "1"
