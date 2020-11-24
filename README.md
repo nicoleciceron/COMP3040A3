@@ -4,11 +4,11 @@ An API is an interface where the routines and features of a website or platform 
 
 ## List of Endpoints with Parameters
 
-1. **ticketFair(age)**<br>
+1. **ticketFare(age)**<br>
 This endpoint takes in age of the user as it's parameter and returns the cost of the ticket which applies to that age group.
 1. **peggoPass()** <br>
 This endpoint returns all the information about different kinds of bus passes available.
-1. **busInfo()** <br>
+1. **getAllBusRoutes()** <br>
 This endpoint returns information about all the busses, like their bus number, their start location and their destination
 
 ## Description of Resources
@@ -93,7 +93,7 @@ This endpoint returns information about all the busses, like their bus number, t
 
 ## Sample Request with Sample response
 
-1) This is a sample request for ticketFair
+1) This is a sample request for ticketFare
 
 https://api.wpg-transit.org/ticketFair/json?age=76
 
