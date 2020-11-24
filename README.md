@@ -11,6 +11,86 @@ This endpoint returns all the information about different kinds of bus passes av
 1. **busInfo()** <br>
 This endpoint returns information about all the busses, like their bus number, their start location and their destination
 
+## Description of Resources
+
+**1. Resources for ticketFare**
+```
+	"result":
+	{
+		"id",
+		"type",
+		"cash_price",
+		ticket_price
+		"monthly_pass_price"
+	}
+```
+- Name: "id", Type: string, Example: "2"
+<br>The unique identifier for the cost of riding the bus
+
+- Name: "type", Type string, Example: "Senior Fare"
+<br>The type of bus fare.
+
+- Name: "cash_price", Type: string, Example: "2.50"
+<br>Price of bus fare using cash.
+
+- Name: "ticket_price", Type: string, Example: "1.33"
+<br>Price of a bus ticket.
+
+- Name: "monthly_pass_price", Type: string, Example: "41.05"
+<br>Price of a monthly bus pass.
+
+
+**2. Resources for peggoPass**
+```
+	"result": [
+		{
+			"id",
+			"type",
+			"colour",
+			"passenger_type"
+		}
+	]
+```
+- Name: "id", Type: string, Example: "1"
+<br>The unique identifier for the specific peggo pass.
+
+- Name: "type", Type: string, Example: "Full Fare"
+<br>The type of peggo pass.
+
+- Name: "colour", Type: string, Example: "Orange"
+<br>The colour representing which year the pass is valid for.
+
+- Name: "passenger_type", Type: string array, Example: "["Seniors", "Youth"]"
+<br>The types of passengers that are allowed to use this pass.
+
+
+**3. Resources for getAllBusRoutes**
+```
+	"result" : [
+		{
+			"id",
+			"busNumber",
+			"routeName",
+			"startLocation",
+			"endLocation"
+		}
+	]
+```
+- Name: "id", Type: string, Example: "5"
+<br>The unique identifier of the bus route.
+
+- Name: "busNumber", Type: string, Example: "74"
+<br>The number on the busses taking this route.
+
+- Name: "routeName", Type string, Example: "Crosstown East"
+<br>The name of the route.
+
+- Name: "startLocation", Type: string, Example: "Polo Park"
+<br>The location that the route starts at.
+
+- Name: "endLocation", Type: string, Example: "Westdale"
+<br>The location that the route ends at.
+
 ## Sample Request with Sample response
 
 1) This is a sample request for ticketFair
