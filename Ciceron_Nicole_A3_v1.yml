@@ -62,6 +62,42 @@ paths:
                   $ref: '#components/schemas/Fares'
         '404':
           description: Not Found
+  /peggoPass/:
+    get:
+      tags:
+        - fare
+      summary: Access peggo pass types
+      description: Returns the list of peggo pass types
+      operationId: getAllPeggoPassTypes
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Fares'
+        '404':
+          description: Not Found
+  /getAllBusRoutes/:
+    get:
+      tags:
+        - bus
+      summary: Access all bus routes 
+      description: Returns the list of all bus routes
+      operationId: getAllBusRoutes
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Buses'
+        '404':
+          description: Not Found
     
 
 
