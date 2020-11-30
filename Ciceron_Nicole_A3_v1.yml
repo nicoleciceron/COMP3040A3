@@ -18,12 +18,12 @@ paths:
       tags:
         - fare
       summary: Find fare type by age
-      descripton: Returns a list of fares for an age group
+      description: Returns a list of fares for an age group
       operationId: getTicketFareByAge
       parameters:
         - name: age
           in: path
-          desciption: age that determines passenger fare type to return
+          description: age that determines passenger fare type to return
           required: true
           schema:
             type: interger
@@ -44,7 +44,26 @@ paths:
         - transit_auth:
             - 'write:fares'
             - 'read:fares'
-        
+  /peggoPass/:
+    get:
+      tags:
+        - fare
+      summary: Access peggo pass types
+      description: Returns the list of peggo pass types
+      operationId: getAllPeggoPassTypes
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Fares'
+        '404':
+          description: Not Found
+    
+
 
 
   
