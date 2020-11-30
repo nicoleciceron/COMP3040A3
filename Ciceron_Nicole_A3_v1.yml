@@ -2,4 +2,49 @@ openapi: 3.0.2
 servers:
   - url: /wpgTransit/api/
 info:
+  description: |-
+    This is a Winnipeg Transit Server based on the OPenAPI 3.0 
+      specification.
+  version: 1.0.0
+  title: Winnipeg Transit API - OpenAPI 3.0
+tags:
+  - name: bus
+    description: Everything about Winnipeg Transit buses
+  - name: fare
+    description: Access to different transit fares
+paths:
+  'ticketFare/{age}':
+    get:
+      tags:
+        - fare
+      summary: Find fare type by age
+      descripton: Returns a list of fares for an age group
+      operationId: getTicketFareByAge
+      parameters:
+        - name: age
+          in: path
+          desciption: age that determines passenger fare type to return
+          required: true
+          schema:
+            type: interger
+            format: int64
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Fare'
+        '400':
+          description: Invalid age supplied
+        '404':
+          description: fare type not found
+      security:
+        - api_key: []
+        - transit_auth:
+            - 'write:fares'
+            - 'read:fares'
+        
+
+
   
