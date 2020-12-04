@@ -13,7 +13,7 @@ tags:
   - name: fare
     description: Access to different transit fares
 paths:
-  'ticketFare/{age}':
+  '/ticketFare/{age}':
     get:
       tags:
         - fare
@@ -26,24 +26,19 @@ paths:
           description: age that determines passenger fare type to return
           required: true
           schema:
-            type: interger
+            type: integer
             format: int64
       responses:
         '200':
           description: successful operation
           content:
-            application/xml:
+            application/json:
               schema:
                 $ref: '#/components/schemas/Fare'
         '400':
           description: Invalid age supplied
         '404':
           description: fare type not found
-      security:
-        - api_key: []
-        - transit_auth:
-            - 'write:fares'
-            - 'read:fares'
   /peggoPass/:
     get:
       tags:
@@ -59,25 +54,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#components/schemas/Fares'
-        '404':
-          description: Not Found
-  /peggoPass/:
-    get:
-      tags:
-        - fare
-      summary: Access peggo pass types
-      description: Returns the list of peggo pass types
-      operationId: getAllPeggoPassTypes
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#components/schemas/Fares'
+                  $ref: '#/components/schemas/Peggo'
         '404':
           description: Not Found
   /getAllBusRoutes/:
@@ -95,7 +72,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#components/schemas/Buses'
+                  $ref: '#/components/schemas/Bus'
         '404':
           description: Not Found
 components:
@@ -118,7 +95,46 @@ components:
         monthly_pass_price:
           type: number
           example: 51.05
-
+    Peggo: 
+      properties: 
+        id: 
+          type: integer
+          format: int64
+          example: 01
+        fare_type: 
+          type: string
+          example: "Reduced fare"
+        colour:
+          type: string
+          example: "Green"
+        status:
+          type: string
+          description: pet status in the store
+          enum:
+            - available
+            - pending
+            - sold
+    Bus:
+      properties: 
+        id: 
+          type: integer
+          format: int64
+          example: 1
+        bus_number:
+          type: integer
+          format: int64
+          example: 74
+        route_name:
+          type: string
+          example: "Kenaston"
+        start_location: 
+          type: string
+          example: "Polo Park"
+        end_location: 
+          type: string
+          example: "Universoty of Manitoba"
+    
+        
 
 
   
