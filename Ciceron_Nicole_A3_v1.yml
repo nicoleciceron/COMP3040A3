@@ -41,7 +41,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/TicketFare'
         '400':
-          description: Invalid age supplied
+          description: Invalid age supplied. Bad request
         '404':
           description: fare type not found
   /peggoPass/:
