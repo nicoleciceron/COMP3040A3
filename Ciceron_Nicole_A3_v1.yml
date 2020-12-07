@@ -3,7 +3,7 @@ servers:
   - url: /wpgTransit/api/
 info:
   description: |-
-    This is a Winnipeg Transit Server based on the OPenAPI 3.0 
+    This is a Winnipeg Transit Server based on the OpenAPI 3.0 
       specification.
     It provides specifications for accessing both static and real time information about bus stops, routes, and transit fares.
     Some useful links:
