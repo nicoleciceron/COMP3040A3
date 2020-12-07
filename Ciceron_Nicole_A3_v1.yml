@@ -5,11 +5,16 @@ info:
   description: |-
     This is a Winnipeg Transit Server based on the OPenAPI 3.0 
       specification.
+    It provides specifications for accessing both static and real time information about bus stops, routes, and transit fares.\
+    Some useful links:
+      - [Group 12 Winnipeg Transit API repository](https://github.com/nicoleciceron/COMP3040A3)
+      - [Winnipeg Transit website](https://winnipegtransit.com/en)
   version: 1.0.0
   title: Winnipeg Transit API - OpenAPI 3.0
 tags:
   - name: bus
     description: Everything about Winnipeg Transit buses
+    
   - name: fare
     description: Access to different transit fares
 paths:
@@ -34,7 +39,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Fare'
+                $ref: '#/components/schemas/TicketFare'
         '400':
           description: Invalid age supplied
         '404':
@@ -54,7 +59,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Peggo'
+                  $ref: '#/components/schemas/PeggoPass'
         '404':
           description: Not Found
   /getAllBusRoutes/:
@@ -72,11 +77,29 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Bus'
+                  $ref: '#/components/schemas/BusRoutes'
         '404':
           description: Not Found
 components:
   schemas:
+    TicketFare:
+      properties:
+        Fare:
+          $ref: '#/components/schemas/Fare'
+        Status:
+          $ref: '#/components/schemas/Status'
+    PeggoPass:
+      properties:
+        Fare:
+          $ref: '#/components/schemas/Peggo'
+        Status:
+          $ref: '#/components/schemas/Status'
+    BusRoutes:
+      properties:
+        Fare:
+          $ref: '#/components/schemas/Bus'
+        Status:
+          $ref: '#/components/schemas/Status'
     Fare:
       properties:
         id:
@@ -107,13 +130,6 @@ components:
         colour:
           type: string
           example: "Green"
-        status:
-          type: string
-          description: pet status in the store
-          enum:
-            - available
-            - pending
-            - sold
     Bus:
       properties: 
         id: 
@@ -132,9 +148,16 @@ components:
           example: "Polo Park"
         end_location: 
           type: string
-          example: "Universoty of Manitoba"
-    
-        
+    Status:
+      properties:
+        status:
+          type: string
+          enum:
+            - OK
+            - INVALID_REQUEST
+            - UNKNOWN_ERROR
+          default: OK
+
 
 
   
