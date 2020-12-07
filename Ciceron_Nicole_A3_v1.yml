@@ -5,7 +5,7 @@ info:
   description: |-
     This is a Winnipeg Transit Server based on the OPenAPI 3.0 
       specification.
-    It provides specifications for accessing both static and real time information about bus stops, routes, and transit fares.\
+    It provides specifications for accessing both static and real time information about bus stops, routes, and transit fares.
     Some useful links:
       - [Group 12 Winnipeg Transit API repository](https://github.com/nicoleciceron/COMP3040A3)
       - [Winnipeg Transit website](https://winnipegtransit.com/en)
