@@ -3,7 +3,7 @@ servers:
   - url: /wpgTransit/api/
 info:
   description: |-
-    This is a Winnipeg Transit Server based on the OPenAPI 3.0 
+    This is a Winnipeg Transit Server based on the OpenAPI 3.0 
       specification.
   version: 1.0.0
   title: Winnipeg Transit API - OpenAPI 3.0
